@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="order.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><img src="/Admin/admin_images/logo.png" alt="" width="36"></span>
+                        <span class="title">Pharmacy Shop</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin/admin.html">
+                        <span class="icon"><i class="bi bi-house"></i></span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin/Products/Products.html">
+                        <span class="icon"><i class="fa-solid fa-tablets"></i></span>
+                        <span class="title">Products</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin/Customers/Customers.html">
+                        <span class="icon"><i class="bi bi-people"></i></span>
+                        <span class="title">Customers</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin/order/order.html">
+                        <span class="icon"><i class="bi bi-file-earmark-text"></i></span>
+                        <span class="title">Orders</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin/Settings/Settings.html">
+                        <span class="icon"><i class="bi bi-gear"></i></span>
+                        <span class="title">Settings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="bi bi-box-arrow-right"></i></span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--main-->
+        <div class="main">
+            <div class="topbar">
+                    <div class="toggle">
+                        <i class="bi bi-list"></i>
+                    </div>
+                    
+                
+                <!--search-->
+                <div class="search">
+                    <label for="">
+                        <input type="text" placeholder="Search here">
+                        <i class="bi bi-search"></i>
+                    </label>
+                </div>
+                <!--usersimg-->
+                <div class="user">
+                    <img src="/Admin/admin_images/images/user.jpg" alt="">
+                </div>
+            </div>
+            <!--cards-->
+            <div class="cardbox">
+                <div class="card">
+                    <div class="cardname">Total Orders</div>
+                    <div class="numbers">13,000</div>
+                    <span>Since Last Week</span>
+                </div>
+                <div class="card">
+                    <div class="cardname">Completed Orders</div>
+                    <div class="numbers">3,250</div>
+                    <span>Since Last Week</span>
+                </div>
+                <div class="card">
+                    <div class="cardname">Pending Orders</div>
+                    <div class="numbers">75%</div>
+                    <span>Since Last Week</span>
+                </div>
+                <div class="card">
+                    <div class="cardname">Cancelled Orders</div>
+                    <div class="numbers">12</div>
+                    <span>Since Last Week</span>
+                </div>
+            </div>
+           
+            <div class="details">
+                 <!--order details list-->
+                <div class="recentorders">
+                    <div class="cardheader">
+                        <div class="search">
+                            <label for="">
+                                <input type="text" id="searchOrder" placeholder="Search here">
+                                <i class="bi bi-search"></i>
+                            </label>
+                        </div>
+                        <h2>All Orders</h2>
+                    </div>
+                    <table id="orderTable">
+                        <thead>
+                            <tr>
+                                <td>Order ID</td>
+                                <td>Customer Name</td>
+                                <td>Order Date</td>
+                                <td>Product Ordered</td>
+                                <td>Total Amount</td>
+                                <td>Payment Status</td>
+                                <td>Order Status</td>
+                                <td>Action</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#csx1</td>
+                                <td>Angela Bower</td>
+                                <td>1 Nov, 2025</td>
+                                <td>Tussistop</td>
+                                <td>$1000</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td><span class="status inprogress">In Progress</span></td>
+                                <td><button class="see"><i class="fa-solid fa-eye"></i></button> <button class="delete"><i class="fa-solid fa-trash"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>#ksx2</td>
+                                <td>Willie Tanner</td>
+                                <td>2 Nov, 2025</td>
+                                <td>Phenadone</td>
+                                <td>$1500</td>
+                                <td><span class="status cancelled">Cancelled</span></td>
+                                <td><span class="status completed">Completed</span></td>
+                                <td><button class="see"><i class="fa-solid fa-eye"></i></button> <button class="delete"><i class="fa-solid fa-trash"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>#lmx3</td>
+                                <td>Jonathan Smith</td>
+                                <td>3 Nov, 2025</td>
+                                <td>Paracetamol</td>
+                                <td>$500</td>
+                                <td><span class="status paid">Paid</span></td>
+                                <td><span class="status completed">Completed</span></td>
+                                <td><button class="see"><i class="fa-solid fa-eye"></i></button> <button class="delete"><i class="fa-solid fa-trash"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>#npx4</td>
+                                <td>Sarah Connor</td>
+                                <td>4 Nov, 2025</td>
+                                <td>Ibuprofen</td>
+                                <td>$750</td>
+                                <td><span class="status cancelled">Cancelled</span></td>
+                                <td><span class="status cancelled">Cancelled</span></td>
+                                <td><button class="see"><i class="fa-solid fa-eye"></i></button> <button class="delete"><i class="fa-solid fa-trash"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>#opx5</td>
+                                <td>Michael Scott</td>
+                                <td>5 Nov, 2025</td>
+                                <td>Amoxicillin</td>
+                                <td>$1200</td>
+                                <td><span class="status paid">Paid</span></td>
+                                <td><span class="status completed">Completed</span></td>
+                                <td><button class="see"><i class="fa-solid fa-eye"></i></button> <button class="delete"><i class="fa-solid fa-trash"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>#qrx6</td>
+                                <td>Dwight Schrute</td>
+                                <td>6 Nov, 2025</td>
+                                <td>Vitamin C</td>
+                                <td>$300</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td><span class="status inprogress">In Progress</span></td>
+                                <td><button class="see"><i class="fa-solid fa-eye"></i></button> <button class="delete"><i class="fa-solid fa-trash"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>#stx7</td>
+                                <td>Jim Halpert</td>
+                                <td>7 Nov, 2025</td>
+                                <td>Ibuprofen</td>
+                                <td>$450</td>
+                                <td><span class="status cancelled">Cancelled</span></td>
+                                <td><span class="status cancelled">Cancelled</span></td>
+                                <td><button class="see"><i class="fa-solid fa-eye"></i></button> <button class="delete"><i class="fa-solid fa-trash"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>#uvx8</td>
+                                <td>Pam Beesly</td>
+                                <td>8 Nov, 2025</td>
+                                <td>Paracetamol</td>
+                                <td>$600</td>
+                                <td><span class="status paid">Paid</span></td>
+                                <td><span class="status completed">Completed</span></td>
+                                <td><button class="see"><i class="fa-solid fa-eye"></i></button> <button class="delete"><i class="fa-solid fa-trash"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>#wxz9</td>
+                                <td>Stanley Hudson</td>
+                                <td>9 Nov, 2025</td>
+                                <td>Antibiotics</td>
+                                <td>$800</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td><span class="status inprogress">In Progress</span></td>
+                                <td><button class="see"><i class="fa-solid fa-eye"></i></button> <button class="delete"><i class="fa-solid fa-trash"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>#yzx10</td>
+                                <td>Kevin Malone</td>
+                                <td>10 Nov, 2025</td>
+                                <td>Vitamin D</td>
+                                <td>$400</td>
+                                <td><span class="status cancelled">Cancelled</span></td>
+                                <td><span class="status cancelled">Cancelled</span></td>
+                                <td><button class="see"><i class="fa-solid fa-eye"></i></button> <button class="delete"><i class="fa-solid fa-trash"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>  
+                    <div id="paginationControls" style="margin-top: 20px; text-align: center;">
+                        <button id="prevPage" class="btn" style="margin-right: 10px;">Previous</button>
+                        <span id="pageInfo"></span>
+                        <button id="nextPage" class="btn" style="margin-left: 10px;">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="floating-icon" id="floatingIcon">
+        <i class="bi bi-chat-dots"></i>
+    </div>
+    <script src="order.js"></script>
+</body>
+</html>

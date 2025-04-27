@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="Customers.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><img src="/Admin/admin_images/logo.png" alt="" width="36"></span>
+                        <span class="title">Pharmacy Shop</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin/admin.html">
+                        <span class="icon"><i class="bi bi-house"></i></span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin/Products/Products.html">
+                        <span class="icon"><i class="fa-solid fa-tablets"></i></span>
+                        <span class="title">Products</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="bi bi-people"></i></span>
+                        <span class="title">Customers</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin/order/order.html">
+                        <span class="icon"><i class="bi bi-file-earmark-text"></i></span>
+                        <span class="title">Orders</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/Admin/Settings/Settings.html">
+                        <span class="icon"><i class="bi bi-gear"></i></span>
+                        <span class="title">Settings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="bi bi-box-arrow-right"></i></span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="topbar">
+                    <div class="toggle">
+                        <i class="bi bi-list"></i>
+                    </div>
+                <div class="search">
+                    <label for="">
+                        <input type="text" placeholder="Search here">
+                        <i class="bi bi-search"></i>
+                    </label>
+                </div>
+                <div class="user">
+                    <img src="/Admin/admin_images/images/user.jpg" alt="">
+                </div>
+            </div>
+            <div class="cardbox">
+                <div class="card">
+                    <div>
+                        <div class="cardname">Total Customer</div>
+                        <div class="numbers">6500</div> 
+                    </div>
+                    <div class="iconbox">
+                        <i class="bi bi-people"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="cardname">New Customer</div>
+                        <div class="numbers">300</div>
+                    </div>
+                    <div class="iconbox">
+                        <i class="bi bi-people"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="cardname">Recurring Customers</div>
+                        <div class="numbers">48%</div>
+                    </div>
+                    <div class="iconbox">
+                        <i class="bi bi-people"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="details">
+                <div class="recentorders">
+                    <div class="cardheader">
+                        <div class="search">
+                            <label for="">
+                                <input type="text" id="searchCustomer" placeholder="Search here">
+                                <i class="bi bi-search"></i>
+                            </label>
+                        </div>
+                        <a href="#" class="btn" id="openFormBtn"><span><i class="bi bi-plus-circle"></i></span>Add New Customer</a>
+                    </div>
+                    <table id="CustomersTable">
+                        <thead class="entete-tableau">
+                            <tr>
+                                <td>Customer ID</td>
+                                <td>Customer Name</td>
+                                <td>Email</td>
+                                <td>Phone</td>
+                                <td>Address</td>
+                                <td>Category</td>
+                                <td>Total Spend</td>
+                                <td>Action</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#asx1</td>
+                                <td>Angela Bower</td>
+                                <td>AngelaBower@gmail.com</td>
+                                <td>123-568-856</td>
+                                <td>123 Main St</td>
+                                <td>Regular</td>
+                                <td>$500</td>
+                                <td><button class="see"><i class="fa-solid fa-eye"></i></button> <button class="delete"><i class="fa-solid fa-trash"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>#asx2</td>
+                                <td>Willie Tanner</td>
+                                <td>WillieTanner@gmail.com</td>
+                                <td>456-568-987</td>
+                                <td>456 Elm St</td>
+                                <td>VIP</td>
+                                <td>$1200</td>
+                                <td><button class="see"><i class="fa-solid fa-eye"></i></button> <button class="delete"><i class="fa-solid fa-trash"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>#asx3</td>
+                                <td>Rick Wright</td>
+                                <td>RickWright@gmail.com</td>
+                                <td>678-568-987</td>
+                                <td>789 Oak St</td>
+                                <td>Regular</td>
+                                <td>$800</td>
+                                <td><button class="see"><i class="fa-solid fa-eye"></i></button> <button class="delete"><i class="fa-solid fa-trash"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>#asx4</td>
+                                <td>Devon Miles</td>
+                                <td>DevonMiles@gmail.com</td>
+                                <td>892-568-678</td>
+                                <td>101 Pine St</td>
+                                <td>VIP</td>
+                                <td>$1500</td>
+                                <td><button class="see"><i class="fa-solid fa-eye"></i></button> <button class="delete"><i class="fa-solid fa-trash"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>#asx5</td>
+                                <td>Tony Danza</td>
+                                <td>TonyDanza@gmail.com</td>
+                                <td>423-568-856</td>
+                                <td>202 Maple St</td>
+                                <td>Regular</td>
+                                <td>$400</td>
+                                <td><button class="see"><i class="fa-solid fa-eye"></i></button> <button class="delete"><i class="fa-solid fa-trash"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>#asx6</td>
+                                <td>Bonnie Bars</td>
+                                <td>BonnieBars@gmail.com</td>
+                                <td>321-568-856</td>
+                                <td>303 Cedar St</td>
+                                <td>VIP</td>
+                                <td>$2000</td>
+                                <td><button class="see"><i class="fa-solid fa-eye"></i></button> <button class="delete"><i class="fa-solid fa-trash"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>#asx7</td>
+                                <td>Thomas Magn</td>
+                                <td>ThomasMagn@gmail.com</td>
+                                <td>123-745-856</td>
+                                <td>404 Birch St</td>
+                                <td>Regular</td>
+                                <td>$600</td>
+                                <td><button class="see"><i class="fa-solid fa-eye"></i></button> <button class="delete"><i class="fa-solid fa-trash"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>#asx8</td>
+                                <td>Hann Smith</td>
+                                <td>HannSMith@gmail.com</td>
+                                <td>123-568-641</td>
+                                <td>505 Walnut St</td>
+                                <td>VIP</td>
+                                <td>$1800</td>
+                                <td><button class="see"><i class="fa-solid fa-eye"></i></button> <button class="delete"><i class="fa-solid fa-trash"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table> 
+                    <div id="paginationControls" style="margin-top: 20px; text-align: center;">
+                        <button id="prevPage" class="btn" style="margin-right: 10px;">Previous</button>
+                        <span id="pageInfo"></span>
+                        <button id="nextPage" class="btn" style="margin-left: 10px;">Next</button>
+                    </div>
+                </div>
+            </div>
+            <div id="addmedicine" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="closebtn">&times;</span>
+                    <h2>Ajouter un client</h2>
+                    <form id="customerForm">
+                        <div class="form-group">
+                            <label for="customerName">Nom du client :</label>
+                            <input type="text" id="customerName" name="customerName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customerEmail">Email :</label>
+                            <input type="email" id="customerEmail" name="customerEmail" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customerPhone">Téléphone :</label>
+                            <input type="tel" id="customerPhone" name="customerPhone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customerAddress">Adresse :</label>
+                            <input type="text" id="customerAddress" name="customerAddress" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customerCategory">Catégorie :</label>
+                            <select id="customerCategory" name="customerCategory" class="form-control" required>
+                                <option value="">Sélectionner une catégorie</option>
+                                <option value="regular">Régulier</option>
+                                <option value="vip">VIP</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Ajouter</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="floating-icon" id="floatingIcon">
+        <i class="bi bi-chat-dots"></i>
+    </div>
+    <script src="Customers.js"></script>
+</body>
+</html>

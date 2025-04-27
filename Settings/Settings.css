@@ -1,0 +1,472 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+.container{
+    position: relative;
+    width: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    
+}
+.navigation{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: #1364FF;
+    transition: 0.5s;
+    overflow: hidden;
+    z-index: 10;
+}
+.navigation.active{
+    width: 85px;
+}
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 15px;
+}
+.navigation ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius:30px ;
+    border-bottom-left-radius: 30px;
+}
+.navigation ul li:hover, .navigation ul li.hovered {
+    background: white; 
+}
+.navigation ul li:hover a, .navigation ul li.hovered a {
+    color: #1364FF; 
+}
+.navigation ul li:hover a::before, .navigation ul li.hovered a::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px white;
+    pointer-events: none;
+}
+.navigation ul li:hover a::after, .navigation ul li.hovered a::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px white;
+    pointer-events: none;
+}
+.navigation ul li:nth-child(1){
+    margin-bottom: 40px;
+    margin-top: 20px;
+    pointer-events: none;
+}
+.navigation ul li a{
+    position: relative;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: white;    
+}
+.navigation ul li:hover a{
+    color: #1364FF;
+}
+.icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+.icon i{
+    font-size: 1.75em;
+}
+.title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+.main {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: #f9f9f9; /* Same as settings-container */
+    transition: 0.5s;
+}
+.main.active{
+    width: calc(100% - 85px);
+    left: 85px;
+}
+.topbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    cursor: pointer;
+    
+}
+.search{
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+    
+}
+.search label{
+    position: relative;
+    width: 100%;
+}
+.search label input{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    outline: none;
+    border: none;
+    background: #f5f3f3;
+}
+.search label i{
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+    color: #a5a4a4;
+}
+.user{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+.user img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+/* General container for the Settings page */
+.settings-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+}
+
+/* Header styles */
+.settings-container h1 {
+    font-size: 2em;
+    color: #1364FF;
+    margin-bottom: 20px;
+}
+
+/* Card styles for settings sections */
+.settings-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.settings-card h2 {
+    font-size: 1.5em;
+    color: #1364FF;
+    margin-bottom: 10px;
+}
+
+.settings-card p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Button styles */
+.settings-card .btn {
+    width: 20%; /* Keep the reduced width */
+    padding: 6px 12px; /* Keep the reduced padding */
+    background: #1364FF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85em; /* Keep the reduced font size */
+    margin-top: 8px; /* Keep the reduced margin */
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.settings-card .btn:hover {
+    background: #0d4db8;
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+.settings-card .btn:active {
+    transform: scale(0.95); /* Slightly shrink button on click */
+}
+
+/* Ensure proper alignment for forms */
+.settings-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Reduced gap between form elements */
+}
+
+.settings-form label {
+    font-weight: 600;
+    color: #1364FF;
+    font-size: 0.9em; /* Reduced font size */
+    margin-bottom: 4px; /* Reduced margin below labels */
+}
+
+.settings-form input,
+.settings-form select {
+    width: 40%; /* Keep the reduced width */
+    padding: 6px; /* Keep the reduced padding */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 0.9em; /* Keep the reduced font size */
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.settings-form input:hover,
+.settings-form select:hover {
+    border-color: #1364FF; /* Add hover effect */
+    box-shadow: 0 0 5px rgba(19, 100, 255, 0.3); /* Add subtle shadow on hover */
+}
+
+.settings-form input:focus,
+.settings-form select:focus {
+    border-color: #1364FF;
+    box-shadow: 0 0 5px rgba(19, 100, 255, 0.5); /* Enhance focus shadow */
+}
+
+/* Button group styles */
+.btn-group {
+    display: flex;
+    gap: 8px; /* Reduced gap between buttons */
+    margin-top: 8px; /* Reduced margin above button groups */
+}
+
+.btn-group .btn {
+    width: 80%; /* Keep the reduced width */
+    padding: 6px 12px; /* Keep the reduced padding */
+    font-size: 0.85em; /* Keep the reduced font size */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-group .btn-primary {
+    background: #1364FF;
+}
+
+.btn-group .btn-secondary {
+    background: #ccc;
+    color: #000;
+    border: none;
+}
+
+.btn-group .btn:hover {
+    opacity: 0.9;
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+.btn-group .btn:active {
+    transform: scale(0.95); /* Slightly shrink button on click */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .settings-container {
+        padding: 10px;
+    }
+
+    .settings-card {
+        padding: 15px;
+    }
+
+    .settings-card h2 {
+        font-size: 1.2em;
+    }
+
+    .settings-card .btn {
+        font-size: 0.9em;
+    }
+}
+
+.floating-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #d64779;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: grab; 
+}
+
+.floating-icon:hover {
+    background-color: #d64779;
+    transform: scale(1.1);
+}
+
+.floating-icon i {
+    font-size: 1.5em;
+}
+
+.floating-icon:active {
+    cursor: grabbing; 
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .settings-container {
+        padding: 20px;
+        height: auto;
+    }
+
+    .settings-container .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .settings-container .form-group label {
+        margin-bottom: 5px;
+    }
+
+    .main {
+        width: 100%;
+        left: 0;
+        position: relative; /* Ensure proper alignment */
+    }
+
+    .navigation {
+        width: 85px;
+    }
+
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Styles for toggle switches */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    margin-left: 10px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 25px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 19px;
+    width: 19px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #1364FF;
+}
+
+input:checked + .slider:before {
+    transform: translateX(25px);
+}
+
+/* Align toggle buttons to the right of each field */
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #1364FF;
+    flex: 1; /* Take up available space */
+}
+
+.toggle-container {
+    flex-shrink: 0; /* Prevent shrinking of the toggle container */
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .settings-card {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
